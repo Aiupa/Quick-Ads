@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}Welcome in QuickAds!
+			{% endblock %}
+		</title>
+		<!-- Axentix CSS minified version -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/axentix@1.0.0-beta.3.1/dist/css/axentix.min.css"> 
+        {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+        {% endblock %}
+		</head>
+		<body>
+
+			<header>
+				<nav class="navbar shadow-1 meadow light-2">
+					<a href="{{ path('app_home') }}" class="navbar-brand">Axentix</a>
+					<div class="navbar-menu ml-auto">
+						<a class="navbar-link" href="#">Home</a>
+						<a class="navbar-link" href="#">Link 2</a>
+						<a class="navbar-link" href="#">Link 3</a>
+						<a class="navbar-link" href="#">Link 4</a>
+					</div>
+				</nav>
+			</header>
+
+			<main>
+                {% block body %}{% endblock %}
+			</main>
+
+			<footer class="footer meadow light-2">
+				Copyright © 2020 - Example
+			</footer>
+			
+			<!-- Axentix JS minified version -->
+			<script src="https://cdn.jsdelivr.net/npm/axentix@1.0.0-beta.3.1/dist/js/axentix.min.js"></script>
+			{% block javascripts %}
+			<script src="{{ asset('javascript/script.js') }}"></script>
+			{% endblock %}
+		</body>
+	</html>
+
